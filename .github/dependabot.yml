@@ -5,8 +5,43 @@
 
 version: 2
 updates:
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      # Check for updates to GitHub Actions every week
+      interval: "weekly"
+
   - package-ecosystem: "pip"
     directory: "/saw-remote-api/python"
     schedule:
-      interval: "daily"
+      interval: "weekly"
+
+  - package-ecosystem: "cargo"
+    directory: "/doc/rust-tutorial/code/salsa20"
+    schedule:
+      interval: "weekly"
+
+  # The submodules:
+  #   work (without 'submodule', ...)? best way?
+
+  - package-ecosystem: "pip"
+    directory: "/deps/argo/python"
+    schedule:
+      interval: "weekly"
+
+  - package-ecosystem: "cargo"
+    directory: "/deps/crucible/crux-mir/lib/compiler_builtins"
+    schedule:
+      interval: "weekly"
+
+  - package-ecosystem: "cargo"
+    directory: "/deps/crucible/crux-mir/report-coverage"
+    schedule:
+      interval: "weekly"
+
+  - package-ecosystem: "pip"
+    directory: "/deps/cryptol/cryptol-remote-api/python"
+    schedule:
+      interval: "weekly"
+
 
