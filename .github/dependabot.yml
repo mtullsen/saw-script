@@ -3,12 +3,29 @@
 # Please see the documentation for all configuration options:
 # https://docs.github.com/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file
 
+# NOTE re open-pull-requests-limit.
+#  - default is 5.
+#  - setting to zero, not only default is 5.
+
 version: 2
 updates:
+  - package-ecosystem: "gitsubmodule"
+    directory: "/"
+    # - "deps/argo/"
+    # - "/deps/cryptol/"
+    # - "/deps/crucible/"
+
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
       # Check for updates to GitHub Actions every week
+      interval: "weekly"
+    open-pull-requests-limit: 50
+      # default is 5.
+
+  - package-ecosystem: "cargo"
+    directory: "/doc/rust-tutorial/code/salsa20"
+    schedule:
       interval: "weekly"
     open-pull-requests-limit: 50
       # default is 5.
@@ -20,17 +37,6 @@ updates:
     open-pull-requests-limit: 50
       # default is 5.
     
-  - package-ecosystem: "cargo"
-    directory: "/doc/rust-tutorial/code/salsa20"
-    schedule:
-      interval: "weekly"
-    open-pull-requests-limit: 50
-      # default is 5.
-
-  # The submodules:
-  #   work (without 'submodule', ...)? best way?
-  # - package-ecosystem: "submodule"
-
   - package-ecosystem: "pip"
     directories:
      - "/deps/argo/python"
