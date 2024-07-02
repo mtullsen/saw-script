@@ -10,38 +10,41 @@ updates:
     schedule:
       # Check for updates to GitHub Actions every week
       interval: "weekly"
+    open-pull-requests-limit: 0
+      # default is 5.
 
   - package-ecosystem: "pip"
     directory: "/saw-remote-api/python"
     schedule:
       interval: "weekly"
-
+    open-pull-requests-limit: 0
+      # default is 5.
+    
   - package-ecosystem: "cargo"
     directory: "/doc/rust-tutorial/code/salsa20"
     schedule:
       interval: "weekly"
+    open-pull-requests-limit: 0
+      # default is 5.
 
   # The submodules:
   #   work (without 'submodule', ...)? best way?
+  # - package-ecosystem: "submodule"
 
   - package-ecosystem: "pip"
-    directory: "/deps/argo/python"
+    directories:
+     - "/deps/argo/python"
+     - "/deps/cryptol/cryptol-remote-api/python"
     schedule:
       interval: "weekly"
+    open-pull-requests-limit: 0
+        # default is 5.
 
   - package-ecosystem: "cargo"
-    directory: "/deps/crucible/crux-mir/lib/compiler_builtins"
+    directories:
+     - "/deps/crucible/crux-mir/lib/compiler_builtins"
+     - "/deps/crucible/crux-mir/report-coverage"
     schedule:
       interval: "weekly"
-
-  - package-ecosystem: "cargo"
-    directory: "/deps/crucible/crux-mir/report-coverage"
-    schedule:
-      interval: "weekly"
-
-  - package-ecosystem: "pip"
-    directory: "/deps/cryptol/cryptol-remote-api/python"
-    schedule:
-      interval: "weekly"
-
-
+    open-pull-requests-limit: 0
+      # default is 5.
