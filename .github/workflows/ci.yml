@@ -187,7 +187,7 @@ jobs:
             prover_tests
           dest: dist-tests
 
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v4
         if: "matrix.ghc == '9.2.8'"
         with:
           path: dist-tests
@@ -238,7 +238,7 @@ jobs:
       # distribution version matches the HPC version, the HPC build artifacts do
       # not clobber the non-HPC distribution artifacts.
       - if: matrix.ghc == '9.2.8' && matrix.hpc == false
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: ${{ steps.config.outputs.name }} (GHC ${{ matrix.ghc }})
           path: "${{ steps.config.outputs.name }}.tar.gz*"
@@ -246,7 +246,7 @@ jobs:
           retention-days: ${{ needs.config.outputs.retention-days }}
 
       - if: matrix.ghc == '9.2.8' && matrix.hpc == false
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: ${{ steps.config.outputs.name }}-with-solvers (GHC ${{ matrix.ghc }})
           path: "${{ steps.config.outputs.name }}-with-solvers.tar.gz*"
@@ -254,7 +254,7 @@ jobs:
           retention-days: ${{ needs.config.outputs.retention-days }}
 
       - if: matrix.ghc == '9.2.8' && matrix.run-tests && matrix.hpc == false
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           path: dist/bin
           name: ${{ matrix.os }}-bins
@@ -264,7 +264,7 @@ jobs:
         run: .github/ci.sh collect_hpc_files
 
       - if: matrix.hpc == true
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           path: hpc.tar.gz
           name: ${{ matrix.os }}-hpc.tar.gz
@@ -609,7 +609,7 @@ jobs:
         run: |
           ./compute-coverage.sh
 
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v4
         with:
           path: hpc-html
           name: coverage-html-${{ github.event.number }}
