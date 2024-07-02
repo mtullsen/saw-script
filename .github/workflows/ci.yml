@@ -403,7 +403,7 @@ jobs:
           name: "${{ matrix.os }}-bins"
           path: dist/bin
 
-      - uses: actions/setup-python@v2
+      - uses: actions/setup-python@v5
         with:
           # Ensure that this matches saw-remote-api/python/mypy.ini file
           # and that saw-remote-api/python/pyproject.toml file is compatible with this version
@@ -701,7 +701,7 @@ jobs:
           cache-to: type=registry,ref=${{ matrix.cache }}:${{ steps.common-tag.outputs.common-tag }},mode=max
 
       - if: matrix.image == 'ghcr.io/galoisinc/saw-remote-api'
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v5
         with:
           # Ensure that this matches saw-remote-api/python/mypy.ini file
           # and that saw-remote-api/python/pyproject.toml file is compatible with this version
