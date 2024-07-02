@@ -409,7 +409,7 @@ jobs:
           # and that saw-remote-api/python/pyproject.toml file is compatible with this version
           python-version: '3.12'
 
-      - uses: abatilo/actions-poetry@v2.0.0
+      - uses: abatilo/actions-poetry@v3.0.0
         with:
           poetry-version: 1.4.2
 
@@ -708,7 +708,7 @@ jobs:
           python-version: '3.12'
 
       - if: matrix.image == 'ghcr.io/galoisinc/saw-remote-api'
-        uses: abatilo/actions-poetry@v2.0.0
+        uses: abatilo/actions-poetry@v3.0.0
         with:
           poetry-version: 1.4.2
 
