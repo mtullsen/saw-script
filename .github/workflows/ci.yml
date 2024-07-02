@@ -296,7 +296,7 @@ jobs:
           BUILD_TARGET_OS: ${{ matrix.os }}
           BUILD_TARGET_ARCH: ${{ runner.arch }}
 
-      - uses: actions/download-artifact@v2
+      - uses: actions/download-artifact@v4
         with:
           name: "${{ matrix.os }}-bins"
           path: dist/bin
@@ -331,7 +331,7 @@ jobs:
           BUILD_TARGET_OS: ${{ matrix.os }}
           BUILD_TARGET_ARCH: ${{ runner.arch }}
 
-      - uses: actions/download-artifact@v2
+      - uses: actions/download-artifact@v4
         with:
           name: "${{ matrix.os }}-bins"
           path: dist/bin
@@ -398,7 +398,7 @@ jobs:
           BUILD_TARGET_OS: ${{ matrix.os }}
           BUILD_TARGET_ARCH: ${{ runner.arch }}
 
-      - uses: actions/download-artifact@v2
+      - uses: actions/download-artifact@v4
         with:
           name: "${{ matrix.os }}-bins"
           path: dist/bin
@@ -461,7 +461,7 @@ jobs:
           BUILD_TARGET_OS: ${{ matrix.os }}
           BUILD_TARGET_ARCH: ${{ runner.arch }}
 
-      - uses: actions/download-artifact@v2
+      - uses: actions/download-artifact@v4
         with:
           name: "${{ matrix.os }}-bins"
           path: dist/bin
@@ -474,7 +474,7 @@ jobs:
         if: runner.os != 'Windows'
         run: chmod +x bin/*
 
-      - uses: actions/download-artifact@v2
+      - uses: actions/download-artifact@v4
         with:
           name: dist-tests-${{ matrix.os }}
           path: dist-tests
@@ -554,12 +554,12 @@ jobs:
           BUILD_TARGET_OS: ${{ matrix.os }}
           BUILD_TARGET_ARCH: ${{ runner.arch }}
 
-      - uses: actions/download-artifact@v2
+      - uses: actions/download-artifact@v4
         with:
           name: dist-tests-${{ matrix.os }}
           path: dist-tests
 
-      - uses: actions/download-artifact@v2
+      - uses: actions/download-artifact@v4
         with:
           name: "${{ matrix.os }}-hpc.tar.gz"
 
@@ -755,7 +755,7 @@ jobs:
           mkdir -p s2nTests/bin
 
       - name: Download previously-built SAW
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v4
         with:
           name: "${{ matrix.os }}-bins"
           path: ./s2nTests/bin
@@ -809,7 +809,7 @@ jobs:
           mkdir -p exercises/bin
 
       - name: Download previously-built SAW
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v4
         with:
           name: "${{ matrix.os }}-bins"
           path: ./exercises/bin
