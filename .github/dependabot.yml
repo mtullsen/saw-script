@@ -10,21 +10,21 @@ updates:
     schedule:
       # Check for updates to GitHub Actions every week
       interval: "weekly"
-    open-pull-requests-limit: 0
+    open-pull-requests-limit: 50
       # default is 5.
 
   - package-ecosystem: "pip"
     directory: "/saw-remote-api/python"
     schedule:
       interval: "weekly"
-    open-pull-requests-limit: 0
+    open-pull-requests-limit: 50
       # default is 5.
     
   - package-ecosystem: "cargo"
     directory: "/doc/rust-tutorial/code/salsa20"
     schedule:
       interval: "weekly"
-    open-pull-requests-limit: 0
+    open-pull-requests-limit: 50
       # default is 5.
 
   # The submodules:
@@ -37,7 +37,7 @@ updates:
      - "/deps/cryptol/cryptol-remote-api/python"
     schedule:
       interval: "weekly"
-    open-pull-requests-limit: 0
+    open-pull-requests-limit: 50
         # default is 5.
 
   - package-ecosystem: "cargo"
@@ -46,5 +46,5 @@ updates:
      - "/deps/crucible/crux-mir/report-coverage"
     schedule:
       interval: "weekly"
-    open-pull-requests-limit: 0
+    open-pull-requests-limit: 50
       # default is 5.
